@@ -5,3 +5,11 @@ install:
   - httpd
   - php
   - php-mysql
+
+fichiersphp:
+  - create_db.php
+  - create_table.php
+  - getting_data.php
+  - insert_data.php
+  - remove_data.php
+  - remove_db.php

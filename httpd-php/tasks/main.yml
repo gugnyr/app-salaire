@@ -10,7 +10,37 @@
   loop:
     "{{ install }}"
 
+- name: Copie des fichiers php
+  become: yes
+  copy:
+    src: db-data
+    dest: /var/www/html
+
+- name: Changer le document root
+  become: yes
+  lineinfile:
+    path: /etc/httpd/conf/httpd.conf
+    regexp: '^DocumentRoot '
+    insertafter: '^#DocumentRoot '
+    line: 'DocumentRoot "/var/www/html/db-data"'
+
+- name: Ajout fichier db.conf
+  become: yes
+  template:
+    src: "templates/db-config.php.j2"
+    dest: /var/www/html/db-data/db-config.php
 
 
+- name: Suppresion welcome.conf
+  become: yes
+  file:
+    path: /etc/httpd/conf.d/welcome.conf
+    state: absent
+
+- name: Restart httpd
+  become: yes
+  systemd:
+    name: httpd
+    state: restarted
 
 

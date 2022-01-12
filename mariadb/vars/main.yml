@@ -6,8 +6,9 @@ install:
   - python2-PyMySQL
 
 root_mariadb_password: "root"
-mysql_user: "admin"
-mysql_password: "secret"
-mysql_dbname: "salaire"
+mysql_user: "jpereirasql"
+mysql_password: "jpereirasql"
+mysql_db: "salaire"
 db_host: "192.168.1.29"
 webserver_host: "192.168.1.27"
+root_mysql_password: ""

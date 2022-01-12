@@ -23,3 +23,20 @@
       [client]
       user=root
       password=""
+
+- name: Mysql droits
+  become: yes
+  mysql_user:
+    state: present
+    name: jpereira
+    password: jpereira
+    priv:
+      '*.*:ALL,GRANT'
+    host: 192.168.1.27
+
+
+- name: Rédemarrage mariadb
+  become: yes
+  systemd:
+    name: mariadb
+    state: restarted
