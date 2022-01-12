@@ -1,0 +1,25 @@
+---
+# tasks file for mariadb
+
+- name: Ajout du repot epel release
+  become: yes
+  remote_user: jpereira
+  yum:
+   name: epel-release
+   state: present
+
+- name: Install mariadb
+  become: yes
+  remote_user: jpereira
+  yum: 
+   name: "{{ item }}"
+   state: present
+  loop: "{{ install }}"
+
+- name: Création fichier client mariadb
+  copy:
+    dest: /home/jpereira/my.cnf
+    content: |
+      [client]
+      user=root
+      password=""

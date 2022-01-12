@@ -1,0 +1,7 @@
+---
+# vars file for httpd-php
+
+install:
+  - httpd
+  - php
+  - php-mysql

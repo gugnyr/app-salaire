@@ -1,0 +1,17 @@
+---
+- name: Start webserver
+  hosts: webserver
+
+  remote_user: jpereira
+
+  roles:
+    - httpd-php
+
+
+- name: Start mariadb
+  hosts: db
+
+  remote_user: jpereira
+
+  roles:
+    - mariadb
