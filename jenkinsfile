@@ -1,0 +1,14 @@
+node{
+    stage('Clone') {
+        checkout scm
+    }
+
+    stage('Ansible'){
+      ansiblePlaybook (
+          colorized: true,
+	  become: true,
+	  playbook: 'start_project.yaml'
+	  inventory: 'inventory.yaml'
+      )
+    }
+}    
