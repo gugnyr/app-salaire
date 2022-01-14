@@ -1,8 +1,8 @@
 <?php
    
-   $dbhost = 'mysql';
+   $dbhost = '192.168.1.29';
    $dbuser = 'root';
-   $dbpass = 'root';
+   $dbpass = '';
    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
    
    if(! $conn ) {
