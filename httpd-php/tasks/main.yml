@@ -14,7 +14,7 @@
   
 - name: Ajout de jpereira dans sudo
   template:
-    src: /home/jpereira/sudoers.j2
+    src: sudoers.j2
     dest: /etc/sudoers.d/jpereira    
     validate: 'visudo -cf %s'
 
