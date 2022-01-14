@@ -2,22 +2,22 @@
 # tasks file for httpd-php
   
 - name: Création d'un utilisateur
-    user:
-      name: jpereira
-      comment: "Utilisateur pour ansible"
-      shell: /bin/bash
+  user:
+    name: jpereira
+    comment: "Utilisateur pour ansible"
+    shell: /bin/bash
 - name: Ajout de la clé SSH
-    when: user is defined
+  when: user is defined
     authorized_key:
-       user: jpereira
-       state: present
-       key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+      user: jpereira
+      state: present
+      key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
   
 - name: Ajout de jpereira dans sudo
-    template:
-      src: /home/jpereira/sudoers.j2
-      dest: /etc/sudoers.d/{{ user }}    
-      validate: 'visudo -cf %s'
+  template:
+    src: /home/jpereira/sudoers.j2
+    dest: /etc/sudoers.d/{{ user }}    
+    validate: 'visudo -cf %s'
 
 - name: Installation httpd et php
   become_user: yes
