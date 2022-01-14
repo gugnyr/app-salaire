@@ -4,11 +4,8 @@ node{
     }
 
     stage('Ansible'){
-     steps {
        sh '''
        ansible-playbook start_project.yaml -i inventaire.yaml
        '''
-     }
-      
     }
 }    
