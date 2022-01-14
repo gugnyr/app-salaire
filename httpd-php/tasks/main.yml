@@ -16,7 +16,6 @@
   template:
     src: sudoers.j2
     dest: /etc/sudoers.d/jpereira
-    user: jpereira
 
 - name: Installation httpd et php
   become_user: yes
