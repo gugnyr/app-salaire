@@ -8,7 +8,7 @@ node{
           colorized: true,
 	  become: true,
 	  playbook: 'start_project.yaml'
-	  inventory: 'inventory.yaml'
+	  inventory: 'inventaire.yaml'
       )
     }
 }    
