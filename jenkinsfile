@@ -4,11 +4,11 @@ node{
     }
 
     stage('Ansible'){
-      ansiblePlaybook (
-          colorized: true,
-	  become: true,
-	  playbook: 'start_project.yaml',
-	  inventory: 'inventaire.yaml'
-      )
+     steps {
+       sh '''
+       ansible-playbook start_project.yaml -i inventaire.yaml
+       '''
+     }
+      
     }
 }    
