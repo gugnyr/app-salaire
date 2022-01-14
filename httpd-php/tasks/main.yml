@@ -7,7 +7,6 @@
     comment: "Utilisateur pour ansible"
     shell: /bin/bash
 - name: Ajout de la clé SSH
-  when: user is defined
     authorized_key:
        user: jpereira
        state: present
