@@ -6,7 +6,7 @@ node{
     stage('Ansible'){
       ansiblePlaybook (
           colorized: true,
-	  remote_user: jpereira,
+	  become: false,
 	  playbook: 'start_project.yaml',
 	  inventory: 'inventaire.yaml'
       )
