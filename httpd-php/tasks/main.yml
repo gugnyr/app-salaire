@@ -2,6 +2,7 @@
 # tasks file for httpd-php
 
 - name: Installation httpd et php
+  become_user: yes
   remote_user: jpereira
   yum:
     name: "{{ item }}"
