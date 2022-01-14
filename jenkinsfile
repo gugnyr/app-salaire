@@ -5,7 +5,7 @@ node{
 
     stage('Ansible'){
        sh '''
-       su - jpereira
+       su
        ssh-copy-id jpereira@192.168.1.27
        ansible-playbook start_project.yaml -i inventaire.yaml
        '''
