@@ -9,9 +9,9 @@
 - name: Ajout de la clé SSH
   when: user is defined
     authorized_key:
-      user: jpereira
-      state: present
-      key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+       user: jpereira
+       state: present
+       key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
   
 - name: Ajout de jpereira dans sudo
   template:
