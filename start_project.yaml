@@ -1,15 +1,13 @@
 ---
 - name: Start webserver
   hosts: webserver
-  become: yes
-  remote_user: root
+  remote_user: jpereira
   roles:
     - httpd-php
 
 
 - name: Start mariadb
   hosts: db
-  become: yes
-  remote_user: root
+  remote_user: jpereira
   roles:
     - mariadb
