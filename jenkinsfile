@@ -7,7 +7,7 @@ node{
       ansiblePlaybook (
           colorized: true,
 	  become: true,
-	  playbook: 'start_project.yaml'
+	  playbook: 'start_project.yaml',
 	  inventory: 'inventaire.yaml'
       )
     }
