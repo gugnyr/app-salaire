@@ -7,10 +7,10 @@
     comment: "Utilisateur pour ansible"
     shell: /bin/bash
 - name: Ajout de la clé SSH
-    authorized_key:
-       user: jpereira
-       state: present
-       key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+  authorized_key:
+     user: jpereira
+     state: present
+     key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
   
 - name: Ajout de jpereira dans sudo
   template:
